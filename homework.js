@@ -126,18 +126,17 @@ function multigreeting(name, languageCode){
 function gcd(a, b) {
     var d = 0
     if (a == b) {
-      return a * (2 ** d)
-    } else if (a % 2 == 0 & b % 2 == 0 ) {
-     //I want a and b to both be divided by 2 until 2 is no longer a common divisor and I want to add 1 to d for every time 2 is a common divisor.
-  
-         for(let d=1;a/2 != 0 && b/2 != 0; d++) {
-              if (a < b) {
-              return d * (Math.pow(2,d))
-              } else if (b < a) {
-              return d * (Math.pow(2,d))
-       }
-       }
-     }
-   
+      return a
+    } else if (a % 2 == 0 && b % 2 == 0) {
+        while (a % 2 == 0) {
+          a = a/2;
+          d++
+        }
+        while (b % 2 == 0) {
+          b = b/2;
+          d++
+        }
+    } 
+      return d
+    
     }
-
