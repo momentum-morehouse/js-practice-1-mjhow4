@@ -1,5 +1,5 @@
 // 1. Set the variable `givenName` to the string "Addison".
-var givenName = "Addison";
+let givenName = "Addison";
 // 2. Set candies equal to 20, people to 6, and leftover equal
 // to the remainder of dividing 20 by 6.
 let candies = 20;
@@ -124,19 +124,17 @@ function multigreeting(name, languageCode){
 // divisor using the instructions above.
 
 function gcd(a, b) {
-    var d = 0
-    if (a == b) {
-      return a
-    } else if (a % 2 == 0 && b % 2 == 0) {
-        while (a % 2 == 0) {
-          a = a/2;
-          d++
-        }
-        while (b % 2 == 0) {
-          b = b/2;
-          d++
-        }
-    } 
-      return d
-    
+    if ((typeof a !== 'number') || (typeof b !== 'number')) 
+      return false;
+    a = Math.abs(a);
+    b = Math.abs(b);
+    while(b) {
+      var t = b;
+      b = a % b;
+      a = t;
     }
+    return a;
+  }
+
+
+
